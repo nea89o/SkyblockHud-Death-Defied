@@ -2,12 +2,11 @@ package com.thatgravyboat.skyblockhud.location;
 
 public enum Locations {
     //ERROR LOCATIONS
-    DEFAULT("unknown", "Error", LocationCategory.ERROR),
+    DEFAULT("unknown", "Somewhere on Skyblock...", LocationCategory.ERROR),
     NONE("none", "Unknown", LocationCategory.ERROR),
     //ISLAND
     YOURISLAND("yourisland", "Your Island", LocationCategory.ISLAND),
     GUESTISLAND("guestisland", "Guest Island", LocationCategory.ISLAND),
-    MOULBERRYSISLAND("moulberryisland", "Cool Dude Hub", LocationCategory.ISLAND),
     //HUB
     VILLAGE("village", "Village", LocationCategory.HUB),
     AUCTIONHOUSE("auctionhouse", "Auction House", LocationCategory.HUB),
@@ -61,7 +60,6 @@ public enum Locations {
     OBSIDIANSANCTUARY("obsidiansanctuary", "Obsidian Sanctuary", LocationCategory.DEEPCAVERNS),
     //SPIDERS DEN
     SPIDERSDEN("spidersden", "Spider's Den", LocationCategory.SPIDERSDEN),
-
     //THE END
     THEEND("theend", "The End", LocationCategory.THEEND),
     DRAGONSNEST("dragonsnest", "Dragon's Nest", LocationCategory.THEEND),
@@ -73,8 +71,35 @@ public enum Locations {
     DARKTHICKET("darkthicket", "Dark Thicket", LocationCategory.PARK),
     SAVANNAWOODLAND("savannawoodland", "Savanna Woodland", LocationCategory.PARK),
     JUNGLEISLAND("jungleisland", "Jungle Island", LocationCategory.PARK),
-    //BLAZING FORTRESS
-    BLAZINGFORTRESS("blazingfortress", "Blazing Fortress", LocationCategory.FORTRESS),
+    //CRIMSON ISLE
+    CRIMSONISLE("crimsonisle", "Crimson Isle", LocationCategory.CRIMSON),
+    CRIMSONFIELDS("crimsonfields", "Crimson Fields", LocationCategory.CRIMSON),
+    CATHEDRAL("cathedral", "Cathedral", LocationCategory.CRIMSON),
+    BARBARIANOUTPOST("barbarianoutpost", "Barbarian Outpost", LocationCategory.CRIMSON),
+    MAGEOUTPOST("mageoutpost", "Mage Outpost", LocationCategory.CRIMSON),
+    THEBASTION("thebastion", "The Bastion", LocationCategory.CRIMSON),
+    BLAZINGVOLCANO("blazingvolcano", "Blazing Volcano", LocationCategory.CRIMSON),
+    BURNINGDESERT("burningdesert", "Burning Desert", LocationCategory.CRIMSON),
+    DOJO("dojo", "Dojo", LocationCategory.CRIMSON),
+    DRAGONTAIL("dragontail", "Dragontail", LocationCategory.CRIMSON),
+    DRAGONTAILTOWNSQUARE("dragontailtownsquare", "Dragontail Townsquare", LocationCategory.CRIMSON),
+    DRAGONTAILAUCTIONHOUS("dragontailauctionhous", "Dragontail AH", LocationCategory.CRIMSON),
+    DRAGONTAILBANK("dragontailbank", "Dragontail Bank", LocationCategory.CRIMSON),
+    MINIONSHOP("minionshop", "Minion Shop", LocationCategory.CRIMSON),
+    CHIEFSHUT("chiefshut", "Chief's Hut", LocationCategory.CRIMSON),
+    FORGOTTENSKULL("forgottenskull", "Forgotten Skull", LocationCategory.CRIMSON),
+    KUUDRASEND("kuudrasend", "Kuudra's End", LocationCategory.CRIMSON),
+    MAGMACHAMBER("magmachamber", "Magma Chamber", LocationCategory.CRIMSON),
+    MYSTICMARSH("mysticmarsh", "Mystic Marsh", LocationCategory.CRIMSON),
+    ODGERSHUT("odgershut", "Odger's Hut", LocationCategory.CRIMSON),
+    RUINSOFASHFANG("ruinsofashfang", "Ruins of Ashfang", LocationCategory.CRIMSON),
+    SCARLETON("scarleton", "Scarleton", LocationCategory.CRIMSON),
+    STRONGHOLD("stronghold", "Stronghold", LocationCategory.CRIMSON),
+    THEWASTELAND("thewasteland", "The Wasteland", LocationCategory.CRIMSON),
+    MATRIARCHSLAIR("matriarchslair", "Matriarch's Lair", LocationCategory.CRIMSON),
+    BELLYOFTHEBEAST("bellyofthebeast", "Belly of the Beast", LocationCategory.CRIMSON),
+    AURASLAB("auraslab", "Aura's Lab", LocationCategory.CRIMSON),
+    COURTYARD("courtyard", "Courtyard", LocationCategory.CRIMSON),
     //DUNGEONS
     DUNGEONHUB("dungeonhub", "Dungeon Hub", LocationCategory.DUNGEONHUB),
     CATACOMBS("catacombs", "The Catacombs", LocationCategory.DUNGEONHUB),
