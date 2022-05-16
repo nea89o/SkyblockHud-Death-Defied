@@ -11,7 +11,12 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Queue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import net.minecraft.client.Minecraft;
@@ -22,10 +27,10 @@ import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.Post;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 
 public class NpcDialogue implements IResourceManagerReloadListener {
 
@@ -41,8 +46,8 @@ public class NpcDialogue implements IResourceManagerReloadListener {
     private static Dialogue currentDialogue = null;
 
     @SubscribeEvent
-    public void onTick(TickEvent.ClientTickEvent event) {
-        if (event.phase.equals(TickEvent.Phase.START) || SkyblockHud.config.misc.hideDialogueBox) return;
+    public void onTick(ClientTickEvent event) {
+        if (event.phase.equals(Phase.START) || SkyblockHud.config.misc.hideDialogueBox) return;
         if (showDialogue) ticks++; else ticks = 0;
 
         if (showDialogue && ticks % 60 == 0) {
@@ -54,7 +59,7 @@ public class NpcDialogue implements IResourceManagerReloadListener {
         }
     }
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SubscribeEvent
     public void onChat(ClientChatReceivedEvent event) {
         if (event.type != 2 && !SkyblockHud.config.misc.hideDialogueBox) {
             String message = Utils.removeColor(event.message.getUnformattedText());
@@ -72,7 +77,7 @@ public class NpcDialogue implements IResourceManagerReloadListener {
     }
 
     @SubscribeEvent
-    public void renderOverlay(RenderGameOverlayEvent.Post event) {
+    public void renderOverlay(Post event) {
         if (Utils.overlayShouldRender(event.type, SkyblockHud.hasSkyblockScoreboard(), showDialogue, !SkyblockHud.config.misc.hideDialogueBox)) {
             Minecraft mc = Minecraft.getMinecraft();
             mc.renderEngine.bindTexture(Textures.texture.dialogue);
