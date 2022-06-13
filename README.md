@@ -16,3 +16,5 @@
 SkyblockHUD Reborn is a continuation of what was once a beta mod by ThatGravyBoat to add a better HUD to Hypixel Skyblock. Much like its ancestor, this mod is in beta/constant development, so expect bugs.
 
 disclaimer: this is more of a side hobby than a full time project because haha yes. but i will try my best to keep this mod up to date with the actual game's features to the best of my ability.
+
+disclaimer #2: you'll see a second individual under the name "Erymanthus" making commits. that's the name i (raydeeux) set for myself on my laptop. will i get to clearing that discrepancy up one day? yes. will it be today? probably not.
