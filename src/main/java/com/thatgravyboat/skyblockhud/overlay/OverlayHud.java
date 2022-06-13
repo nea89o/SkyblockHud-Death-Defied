@@ -66,11 +66,13 @@ public class OverlayHud extends Gui {
         } else if (LocationHandler.getCurrentLocation().getCategory().equals(LocationCategory.MUSHROOMDESERT)) {
             drawTrapperOrPelts(width, offset, mc);
         } else if (LocationHandler.getCurrentLocation().getCategory().isMiningCategory()) {
-            if (MinesHandler.currentEvent.display) {
-                drawDwarvenEvent(width, offset, mc);
-            } else {
-                drawMiningPowders(width, offset, mc);
-            }
+            try {
+                if (MinesHandler.currentEvent.display) {
+                    drawDwarvenEvent(width, offset, mc);
+                } else {
+                    drawMiningPowders(width, offset, mc);
+                }
+            } catch (Exception ignored) {}
         } else if (LocationHandler.getCurrentLocation().getCategory().equals(LocationCategory.PARK) && ParkIslandHandler.isRaining()) {
             if (LocationHandler.getCurrentLocation().equals(Locations.HOWLINGCAVE)) {
                 drawSlayer(width, offset, mc);
