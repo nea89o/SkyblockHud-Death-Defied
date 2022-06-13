@@ -69,15 +69,15 @@ public class SlayerHandler {
                 String line = event.scores.get(i);
                 if (line.contains("Slayer Quest") && event.scores.size() > 3) {
                     String slayer = event.scores.get(i - 1).toLowerCase();
-                    slayerTypes selectedSlayer = slayerTypes.NONE;
+                    SlayerHandler.slayerTypes selectedSlayer = SlayerHandler.slayerTypes.NONE;
                     for (slayerTypes types : slayerTypes.values()) {
                         if (slayer.contains(types.displayName.toLowerCase(Locale.ENGLISH))) {
                             selectedSlayer = types;
                             break;
                         }
                     }
-                    currentSlayer = selectedSlayer;
-                    slayerTier = Utils.whatRomanNumeral(slayer.replace(selectedSlayer.getDisplayName().toLowerCase(), "").replace(" ", ""));
+                    SlayerHandler.currentSlayer = selectedSlayer;
+                    SlayerHandler.slayerTier = Utils.whatRomanNumeral(slayer.replace(selectedSlayer.getDisplayName().toLowerCase(), "").replace(" ", ""));
                     break;
                 }
             }
@@ -97,8 +97,8 @@ public class SlayerHandler {
             Matcher killMatcher = KILLS_REGEX.matcher(line);
 
             if (killMatcher.find()) {
-                bossSlain = false;
-                isKillingBoss = false;
+                SlayerHandler.bossSlain = false;
+                SlayerHandler.isKillingBoss = false;
                 try {
                     progress = Integer.parseInt(killMatcher.group(1));
                 } catch (Exception ignored) {}
@@ -106,15 +106,15 @@ public class SlayerHandler {
                     maxKills = Integer.parseInt(killMatcher.group(2));
                 } catch (Exception ignored) {}
             } else if (line.contains("slay the boss")) {
-                bossSlain = false;
-                isKillingBoss = true;
-                maxKills = 0;
-                progress = 0;
+                SlayerHandler.bossSlain = false;
+                SlayerHandler.isKillingBoss = true;
+                SlayerHandler.maxKills = 0;
+                SlayerHandler.progress = 0;
             } else if (line.contains("boss slain")) {
-                isKillingBoss = false;
-                maxKills = 0;
-                progress = 0;
-                bossSlain = true;
+                SlayerHandler.isKillingBoss = false;
+                SlayerHandler.maxKills = 0;
+                SlayerHandler.progress = 0;
+                SlayerHandler.bossSlain = true;
             }
         }
     }
