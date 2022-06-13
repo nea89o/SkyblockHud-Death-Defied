@@ -23,6 +23,7 @@ public class SlayerHandler {
         WOLF(42, "Sven Packmaster"),
         SPIDER(50, "Tarantula Broodfather"),
         VOIDGLOOMSERAPH(58, "Voidgloom Seraph"),
+        INFERNODEMONLORD(66, "Inferno Demonlord"),
         NONE(0, "");
 
         private final String displayName;
