@@ -21,7 +21,8 @@ public class MinesHandler {
         TICKET(107, "Raffle", true, true),
         GOBLIN(99, "Goblin Raid", true, true),
         WIND(0, "Gone With The Wind", false, false),
-        TOGETHER(171, "Better Together", false, true);
+        TOGETHER(171, "Better Together", false, true),
+        GOURMAND(179, "Mithril Gourmand", true, true);
 
         public int x;
         public String displayName;
@@ -104,6 +105,8 @@ public class MinesHandler {
                 MinesHandler.currentEvent = Event.TICKET;
             } else if (event.formattedLine.toLowerCase().contains("goblin raid")) {
                 MinesHandler.currentEvent = Event.GOBLIN;
+            } else if (event.formattedLine.toLowerCase().contains("mithril gourmand")) {
+                MinesHandler.currentEvent = Event.GOURMAND;
             }
         }
         if (event.formattedLine.equalsIgnoreCase("wind compass")) {
@@ -135,6 +138,16 @@ public class MinesHandler {
                 } else if (event.formattedLine.toLowerCase().contains("your kills:") && !event.formattedLine.toLowerCase().contains("(")) {
                     try {
                         eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your kills:", "").trim());
+                    } catch (Exception ignored) {}
+                }
+            } else if (MinesHandler.currentEvent == Event.GOURMAND) {
+                if (event.formattedLine.toLowerCase().contains("remaining:")) {
+                    try {
+                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("tasty mithril", "").replace("remaining:", "").trim());
+                    } catch (Exception ignored) {}
+                } else if (event.formattedLine.toLowerCase().contains("your tasty mithril:") && !event.formattedLine.toLowerCase().contains("(")) {
+                    try {
+                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("tasty mithril:", "").trim());
                     } catch (Exception ignored) {}
                 }
             }

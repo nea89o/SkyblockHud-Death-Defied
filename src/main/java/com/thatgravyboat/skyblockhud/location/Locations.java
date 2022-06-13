@@ -4,9 +4,10 @@ public enum Locations {
     //ERROR LOCATIONS
     DEFAULT("unknown", "Somewhere on Skyblock...", LocationCategory.ERROR),
     NONE("none", "Unknown", LocationCategory.ERROR),
-    //ISLAND
+    //PRIVATE ISLAND
     YOURISLAND("yourisland", "Your Island", LocationCategory.ISLAND),
     GUESTISLAND("guestisland", "Guest Island", LocationCategory.ISLAND),
+    MOULBERRYSISLAND("moulberryisland", "Cool Dude Hub", LocationCategory.ISLAND),
     //HUB
     VILLAGE("village", "Village", LocationCategory.HUB),
     AUCTIONHOUSE("auctionhouse", "Auction House", LocationCategory.HUB),
@@ -34,6 +35,7 @@ public enum Locations {
     BLACKSMITH("blacksmith", "Blacksmith", LocationCategory.HUB),
     FARMHOUSE("farmhouse", "Farmhouse", LocationCategory.HUB),
     WIZARDTOWER("wizardtower", "Wizard Tower", LocationCategory.HUB),
+    THAUMATURGIST("thaumaturgist","Thaumaturgist",LocationCategory.HUB),
     //THE BARN
     THEBARN("thebarn", "The Barn", LocationCategory.BARN),
     WINDMILL("windmill", "Windmill", LocationCategory.BARN),
@@ -84,8 +86,10 @@ public enum Locations {
     DRAGONTAIL("dragontail", "Dragontail", LocationCategory.CRIMSON),
     DRAGONTAILTOWNSQUARE("dragontailtownsquare", "Dragontail Townsquare", LocationCategory.CRIMSON),
     DRAGONTAILAUCTIONHOUS("dragontailauctionhous", "Dragontail AH", LocationCategory.CRIMSON),
+    DRAGONTAILBAZAAR("dragontailbazaar", "Dragontail BZ", LocationCategory.CRIMSON),
     DRAGONTAILBANK("dragontailbank", "Dragontail Bank", LocationCategory.CRIMSON),
-    MINIONSHOP("minionshop", "Minion Shop", LocationCategory.CRIMSON),
+    DRAGONTAILBLACKSMITH("dragontailblacksmith", "Dragontail Blacksmith", LocationCategory.CRIMSON),
+    DRAGONTAILMINIONSHOP("dragontailminionshop", "Dragontail Minion Shop", LocationCategory.CRIMSON),
     CHIEFSHUT("chiefshut", "Chief's Hut", LocationCategory.CRIMSON),
     FORGOTTENSKULL("forgottenskull", "Forgotten Skull", LocationCategory.CRIMSON),
     KUUDRASEND("kuudrasend", "Kuudra's End", LocationCategory.CRIMSON),
@@ -94,6 +98,12 @@ public enum Locations {
     ODGERSHUT("odgershut", "Odger's Hut", LocationCategory.CRIMSON),
     RUINSOFASHFANG("ruinsofashfang", "Ruins of Ashfang", LocationCategory.CRIMSON),
     SCARLETON("scarleton", "Scarleton", LocationCategory.CRIMSON),
+    SCARLETONPLAZA("scarletonplaza", "Scarleton Plaza", LocationCategory.CRIMSON),
+    SCARLETONAUCTIONHOUS("scarletonauctionhous", "Scarleton AH", LocationCategory.CRIMSON),
+    SCARLETONBAZAAR("scarletonbazaar", "Scarleton BZ", LocationCategory.CRIMSON),
+    SCARLETONBANK("scarletonbank", "Scarleton Bank", LocationCategory.CRIMSON),
+    SCARLETONBLACKSMITH("scarletonblacksmith", "Scarleton Blacksmith", LocationCategory.CRIMSON),
+    SCARLETONMINIONSHOP("scarletonminionshop", "Scarleton Minion Shop", LocationCategory.CRIMSON),
     STRONGHOLD("stronghold", "Stronghold", LocationCategory.CRIMSON),
     THEWASTELAND("thewasteland", "The Wasteland", LocationCategory.CRIMSON),
     MATRIARCHSLAIR("matriarchslair", "Matriarch's Lair", LocationCategory.CRIMSON),
