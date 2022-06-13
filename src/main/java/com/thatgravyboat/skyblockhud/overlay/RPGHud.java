@@ -19,6 +19,7 @@ public class RPGHud extends Gui {
 
     private static int mana, maxMana, overflow = 0;
     private static int health, maxHealth = 0;
+    // private static int dominus, maxDominus = 0;
     private static int defense = 0;
 
     public static void updateMana(int current, int max) {
@@ -38,6 +39,10 @@ public class RPGHud extends Gui {
     public static void updateDefense(int input) {
         defense = input;
     }
+
+    // public static void updateDominus(int input) {
+    //     dominus = input;
+    // }
 
     public static void manaPredictionUpdate(boolean isIncrease, int decrease) {
         mana = isIncrease ? Math.min(mana + (maxMana / 50), maxMana) : mana - decrease;

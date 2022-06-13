@@ -17,19 +17,20 @@ public class ActionBarParsing {
 
     private static String lastActionBar = "";
     public static String lastLowActionBar = "";
-    private static IChatComponent lastLowEditedActionBar = null;
+    private static IChatComponent lastLowEditedActionBar = null; //\u1750
 
     private static final Pattern HealthRegex = Pattern.compile("([0-9]+)/([0-9]+)\u2764");
-    private static final Pattern HealingRegex = Pattern.compile("\\+([0-9]+)[\u2586\u2585\u2584\u2583\u2582\u2581]");
+    // private static final Pattern HealingRegex = Pattern.compile("\\+([0-9]+)[\u2586\u2585\u2584\u2583\u2582\u2581]");
     private static final Pattern DefenseRegex = Pattern.compile("([0-9]+)\u2748 Defense");
     private static final Pattern ManaRegex = Pattern.compile("([0-9]+)/([0-9]+)\u270E Mana");
     private static final Pattern ManaOverflowRegex = Pattern.compile("([0-9]+)/([0-9]+)\u270E ([0-9]+)\u02AC");
     private static final Pattern ManaDecreaseRegex = Pattern.compile("-([0-9]+) Mana \\(");
     private static final Pattern DrillFuelRegex = Pattern.compile("([0-9,]+)/([0-9,]+k) Drill Fuel");
     private static final Pattern XpGainRegex = Pattern.compile("\\+(\\d*\\.?\\d*) (Farming|Mining|Combat|Foraging|Fishing|Enchanting|Alchemy|Carpentry|Runecrafting|Social) \\((\\d*\\.?\\d*)%\\)");
+    // private static final Pattern DominusRegex = Pattern.compile("([0-9]+)\u1750");
 
     private static final Pattern HealthReplaceRegex = Pattern.compile("\u00A7c([0-9]+)/([0-9]+)\u2764");
-    private static final Pattern HealingReplaceRegex = Pattern.compile("\\+\u00A7c([0-9]+)[\u2586\u2585\u2584\u2583\u2582\u2581]");
+    // private static final Pattern HealingReplaceRegex = Pattern.compile("\\+\u00A7c([0-9]+)[\u2586\u2585\u2584\u2583\u2582\u2581]");
     private static final Pattern HealthAbsorptionReplaceRegex = Pattern.compile("\u00A76([0-9]+)/([0-9]+)\u2764");
     private static final Pattern DefenseReplaceRegex = Pattern.compile("\u00A7a([0-9]+)\u00A7a\u2748 Defense");
     private static final Pattern ManaReplaceRegex = Pattern.compile("\u00A7b([0-9]+)/([0-9]+)\u270E Mana");
@@ -107,6 +108,7 @@ public class ActionBarParsing {
             Matcher ManaUseMatcher = ManaDecreaseRegex.matcher(bar);
             Matcher ManaOverflowMatcher = ManaOverflowRegex.matcher(bar);
             Matcher XpGainMatcher = XpGainRegex.matcher(bar);
+            // Matcher DominusMatcher = DominusRegex.matcher(bar);
 
             boolean healthFound = HealthMatcher.find();
             boolean defenseFound = DefenseMatcher.find();
@@ -114,6 +116,7 @@ public class ActionBarParsing {
             boolean manaUseFound = ManaUseMatcher.find();
             boolean manaOverflowFound = ManaOverflowMatcher.find();
             boolean xpFound = XpGainMatcher.find();
+            // boolean dominusFound = DominusMatcher.find();
 
             if (healthFound) {
                 try {
@@ -132,6 +135,10 @@ public class ActionBarParsing {
                     RPGHud.updateMana(Integer.parseInt(ManaMatcher.group(1)), Integer.parseInt(ManaMatcher.group(2)));
                 } catch (Exception ignored) {}
             }
+            // if (dominusFound) {
+            //     try {
+            //     } catch (Exception ignored) {}
+            // }
             if (!manaFound && manaOverflowFound) {
                 try {
                     RPGHud.updateMana(Integer.parseInt(ManaOverflowMatcher.group(1)), Integer.parseInt(ManaOverflowMatcher.group(2)));
