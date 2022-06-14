@@ -147,7 +147,7 @@ public class MinesHandler {
                     } catch (Exception ignored) {}
                 } else if (event.formattedLine.toLowerCase().contains("your tasty mithril:") && !event.formattedLine.toLowerCase().contains("(")) {
                     try {
-                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("tasty mithril:", "").trim());
+                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your tasty mithril:", "").trim());
                     } catch (Exception ignored) {}
                 }
             }
