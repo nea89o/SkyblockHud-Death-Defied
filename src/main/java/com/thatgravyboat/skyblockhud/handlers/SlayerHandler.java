@@ -68,17 +68,19 @@ public class SlayerHandler {
             for (int i = 0; i < event.scores.size(); i++) {
                 String line = event.scores.get(i);
                 if (line.contains("Slayer Quest") && event.scores.size() > 3) {
-                    String slayer = event.scores.get(i - 1).toLowerCase();
-                    SlayerHandler.slayerTypes selectedSlayer = SlayerHandler.slayerTypes.NONE;
-                    for (slayerTypes types : slayerTypes.values()) {
-                        if (slayer.contains(types.displayName.toLowerCase(Locale.ENGLISH))) {
-                            selectedSlayer = types;
-                            break;
+                    try {
+                        String slayer = event.scores.get(i - 1).toLowerCase();
+                        SlayerHandler.slayerTypes selectedSlayer = SlayerHandler.slayerTypes.NONE;
+                        for (slayerTypes types : slayerTypes.values()) {
+                            if (slayer.contains(types.displayName.toLowerCase(Locale.ENGLISH))) {
+                                selectedSlayer = types;
+                                break;
+                            }
                         }
-                    }
-                    SlayerHandler.currentSlayer = selectedSlayer;
-                    SlayerHandler.slayerTier = Utils.whatRomanNumeral(slayer.replace(selectedSlayer.getDisplayName().toLowerCase(), "").replace(" ", ""));
-                    break;
+                        SlayerHandler.currentSlayer = selectedSlayer;
+                        SlayerHandler.slayerTier = Utils.whatRomanNumeral(slayer.replace(selectedSlayer.getDisplayName().toLowerCase(), "").replace(" ", ""));
+                        break;
+                    } catch (Exception ignored) {}
                 }
             }
         }
