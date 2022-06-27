@@ -66,7 +66,7 @@ public class MapHandler {
         HUB(0.5f, 494, 444, 294, 218, 294, 224, new ResourceLocation("skyblockhud", "maps/hub.png"), HubIcons.hubIcons),
         MUSHROOM(1.0f, 318, 316, -84, 605, -84, 612, new ResourceLocation("skyblockhud", "maps/mushroom.png"), Collections.emptyList()),
         SPIDERS(1.0f, 270, 238, 400, 362, 400, 364, new ResourceLocation("skyblockhud", "maps/spidersden.png"), Collections.emptyList()),
-        NETHER(0.5f, 257, 371, 436, 732, 433, 736, new ResourceLocation("skyblockhud", "maps/fort.png"), Collections.emptyList()),
+        CRIMSON(1f, 790, 681, 436, 732, 433, 736, new ResourceLocation("skyblockhud", "maps/crimson.png"), Collections.emptyList()),
         BARN(1.5f, 135, 130, -82, 320, -81, 318, new ResourceLocation("skyblockhud", "maps/barn.png"), Collections.emptyList()),
         DWARVEN(0.5f, 409, 461, 206, 160, 202, 166, new ResourceLocation("skyblockhud", "maps/dwarven.png"), DwarvenIcons.dwarvenIcons),
         CRYSTAL(0.5f, 624, 624, -202, -215.7, -202, -212, new ResourceLocation("skyblockhud", "maps/crystal.png"), Collections.emptyList()),
