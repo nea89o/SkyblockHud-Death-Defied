@@ -11,7 +11,7 @@ public enum LocationCategory {
     HUB("hub", 34, Maps.HUB),
     BARN("barn", 67, Maps.BARN),
     MUSHROOMDESERT("mushroomdesert", 75, Maps.MUSHROOM),
-    GOLDMINE("gold_mine", 83),
+    GOLDMINE("gold_mine", 83, Maps.GOLDMINE),
     DEEPCAVERNS("deepcaverns", 91),
     SPIDERSDEN("spiders_den", 99, Maps.SPIDERS),
     PARK("park", 51, Maps.PARK),
