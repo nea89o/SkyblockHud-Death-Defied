@@ -66,12 +66,13 @@ public class MapHandler {
         HUB(0.5f, 494, 444, 294, 218, 294, 224, new ResourceLocation("skyblockhud", "maps/hub.png"), HubIcons.hubIcons),
         MUSHROOM(1.0f, 318, 316, -84, 605, -84, 612, new ResourceLocation("skyblockhud", "maps/mushroom.png"), Collections.emptyList()),
         SPIDERS(1.0f, 270, 238, 400, 362, 400, 364, new ResourceLocation("skyblockhud", "maps/spidersden.png"), Collections.emptyList()),
-        CRIMSON(0.5f, 790, 681, 752, 1070, 750, 1083, new ResourceLocation("skyblockhud", "maps/crimson.png"), Collections.emptyList()),
+        CRIMSON(0.5f, 792, 683, 752, 1070, 750, 1083, new ResourceLocation("skyblockhud", "maps/crimson.png"), Collections.emptyList()),
         BARN(1.5f, 135, 130, -82, 320, -81, 318, new ResourceLocation("skyblockhud", "maps/barn.png"), Collections.emptyList()),
         DWARVEN(0.5f, 409, 461, 206, 160, 202, 166, new ResourceLocation("skyblockhud", "maps/dwarven.png"), DwarvenIcons.dwarvenIcons),
         CRYSTAL(0.5f, 624, 624, -202, -215.7, -202, -212, new ResourceLocation("skyblockhud", "maps/crystal.png"), Collections.emptyList()),
         PARK(1f, 211, 230, 480, 133, 478, 134, new ResourceLocation("skyblockhud", "maps/park.png"), Collections.emptyList()),
-        THEEND(1f, 336, 281, 787, 403, 788, 406, new ResourceLocation("skyblockhud", "maps/end.png"), Collections.emptyList());
+        THEEND(1f, 338, 283, 787, 403, 788, 406, new ResourceLocation("skyblockhud", "maps/end.png"), Collections.emptyList()),
+        DN(.5f, 342, 436, 338, 186, 788, 406, new ResourceLocation("skyblockhud", "maps/dn.png"), Collections.emptyList());
 
         public float scaleFactor;
         public int width;

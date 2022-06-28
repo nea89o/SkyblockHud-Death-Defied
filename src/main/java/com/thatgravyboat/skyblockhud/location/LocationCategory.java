@@ -16,7 +16,7 @@ public enum LocationCategory {
     SPIDERSDEN("spiders_den", 99, Maps.SPIDERS),
     PARK("park", 51, Maps.PARK),
     CRIMSON("crimson_isle", 107, Maps.CRIMSON),
-    DUNGEONHUB("dungeonhub", 115),
+    DN("dungeonhub", 115, Maps.DN),
     JERRY("jerry", 59),
     THEEND("the_end", 123, Maps.THEEND),
     DWARVENMINES("dwarven_mines", 131, Maps.DWARVEN),

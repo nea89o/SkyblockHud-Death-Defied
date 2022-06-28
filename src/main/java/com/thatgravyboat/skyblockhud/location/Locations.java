@@ -111,9 +111,9 @@ public enum Locations {
     AURASLAB("auraslab", "Aura's Lab", LocationCategory.CRIMSON),
     COURTYARD("courtyard", "Courtyard", LocationCategory.CRIMSON),
     //DUNGEONS
-    DUNGEONHUB("dungeonhub", "Dungeon Hub", LocationCategory.DUNGEONHUB),
-    CATACOMBS("catacombs", "The Catacombs", LocationCategory.DUNGEONHUB),
-    CATACOMBSENTRANCE("catacombsentrance", "Catacombs Entrance", LocationCategory.DUNGEONHUB),
+    DUNGEONHUB("dungeonhub", "Dungeon Hub", LocationCategory.DN),
+    CATACOMBS("catacombs", "The Catacombs", LocationCategory.DN),
+    CATACOMBSENTRANCE("catacombsentrance", "Catacombs Entrance", LocationCategory.DN),
     //JERRYISLAND
     JERRYSWORKSHOP("jerrysworkshop", "Jerry's Workshop", LocationCategory.JERRY),
     JERRYPOND("jerrypond", "Jerry Pond", LocationCategory.JERRY),
