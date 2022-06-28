@@ -72,7 +72,7 @@ public class MapHandler {
         CRYSTAL(0.5f, 624, 624, -202, -215.7, -202, -212, new ResourceLocation("skyblockhud", "maps/crystal.png"), Collections.emptyList()),
         PARK(1f, 211, 230, 480, 133, 478, 134, new ResourceLocation("skyblockhud", "maps/park.png"), Collections.emptyList()),
         THEEND(1f, 338, 283, 787, 403, 788, 406, new ResourceLocation("skyblockhud", "maps/end.png"), Collections.emptyList()),
-        DN(1f, 171, 219, 145, 87, 131, 91, new ResourceLocation("skyblockhud", "maps/dn.png"), Collections.emptyList());
+        DN(1f, 171, 219, 145, 87, 144, 90, new ResourceLocation("skyblockhud", "maps/dn.png"), Collections.emptyList());
 
         public float scaleFactor;
         public int width;
