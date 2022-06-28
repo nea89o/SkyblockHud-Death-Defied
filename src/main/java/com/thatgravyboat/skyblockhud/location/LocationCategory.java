@@ -18,7 +18,7 @@ public enum LocationCategory {
     CRIMSON("crimson_isle", 107, Maps.CRIMSON),
     DUNGEONHUB("dungeonhub", 115),
     JERRY("jerry", 59),
-    THEEND("the_end", 123),
+    THEEND("the_end", 123, Maps.THEEND),
     DWARVENMINES("dwarven_mines", 131, Maps.DWARVEN),
     CRYSTALHOLLOWS("crystal_hollows", 139, Maps.CRYSTAL);
 
