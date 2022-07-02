@@ -316,7 +316,7 @@ public class SBHConfig extends Config {
 
         @Expose
         @ConfigOption(name = "Map Locations", desc = "Drag and drop a location from this list into the trash can if you would like to disable SBH's map for that location, and use maps from other mods.")
-        @ConfigEditorDraggableList(exampleText = { "Hub", "The Barn", "Mushroom Desert", "Gold Mine", "Deep Caverns (No Map Yet)", "Spider's Den", "The Park", "Crimson Isles", "Dungeon Hub", "Jerry's Workshop (WIP)", "The End", "Dwarven Mines", "Crystal Hollows"})
+        @ConfigEditorDraggableList(exampleText = { "Hub", "The Barn", "Mushroom Desert", "Gold Mine", "Deep Caverns (No Map Yet)", "Spider's Den", "The Park", "Crimson Isles", "Dungeon Hub", "Jerry's Workshop (WIP)", "The End", "Dwarven Mines", "Crystal Hollows" })
         public List<Integer> mapLocations = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12));
 
         @Expose
