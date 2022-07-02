@@ -315,9 +315,9 @@ public class SBHConfig extends Config {
         public boolean showMiniMap = false;
 
         @Expose
-        @ConfigOption(name = "Map Locations", desc = "Remove a location from this list if you would like the map to not show up in that location. This is so you can use other mods maps.")
-        @ConfigEditorDraggableList(exampleText = { "HUB", "BARN", "MUSHROOMDESERT", "GOLDMINE", "DEEPCAVERNS (No Map Yet)", "SPIDERSDEN", "PARK", "CRIMSON", "DUNGEONHUB", "JERRY", "THEEND", "DWARVENMINES", "CRYSTALHOLLOWS" })
-        public List<Integer> mapLocations = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11));
+        @ConfigOption(name = "Map Locations", desc = "Drag and drop a location from this list into the trash can if you would like to disable SBH's map for that location, and use maps from other mods.")
+        @ConfigEditorDraggableList(exampleText = { "Hub", "The Barn", "Mushroom Desert", "Gold Mine", "Deep Caverns (No Map Yet)", "Spider's Den", "The Park", "Crimson Isles", "Dungeon Hub", "Jerry's Workshop (WIP)", "The End", "Dwarven Mines", "Crystal Hollows"})
+        public List<Integer> mapLocations = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12));
 
         @Expose
         @ConfigOption(name = "Mini-Map Position", desc = "Allows you to change the position of the Mini-Map.")
