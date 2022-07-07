@@ -1,5 +1,5 @@
 package com.thatgravyboat.skyblockhud.location;
-
+//setting down groundwork in case this ever gets used-based on gravy's past work, EndIslandHandler.java
 public class CrimsonIsleHandler {
 
     public enum bosses {
