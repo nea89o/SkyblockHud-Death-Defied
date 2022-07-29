@@ -1,4 +1,5 @@
 package com.thatgravyboat.skyblockhud.location;
+
 //this was groundwork gravy had and it's just been collecting dust
 public class EndIslandHandler {
 
