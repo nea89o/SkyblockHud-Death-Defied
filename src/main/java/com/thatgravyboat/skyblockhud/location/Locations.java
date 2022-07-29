@@ -36,6 +36,7 @@ public enum Locations {
     FARMHOUSE("farmhouse", "Farmhouse", LocationCategory.HUB),
     WIZARDTOWER("wizardtower", "Wizard Tower", LocationCategory.HUB),
     THAUMATURGIST("thaumaturgist", "Thaumaturgist", LocationCategory.HUB),
+    HEXATORUM("hexatorum", "Hexatorum", LocationCategory.HUB),
     //THE BARN
     THEBARN("thebarn", "The Barn", LocationCategory.BARN),
     WINDMILL("windmill", "Windmill", LocationCategory.BARN),
