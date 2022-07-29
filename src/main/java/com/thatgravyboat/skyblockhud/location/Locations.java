@@ -114,8 +114,8 @@ public enum Locations {
     AURASLAB("auraslab", "Aura's Lab", LocationCategory.CRIMSON),
     COURTYARD("courtyard", "Courtyard", LocationCategory.CRIMSON),
     IGRUPANSCHICKENCOOP("igrupanschickencoop", "Igrupan's Chicken Coop", LocationCategory.CRIMSON),
-    THRONEROOM("throneroom","Throne Room", LocationCategory.CRIMSON),
-    MAGECOUNCIL("magecouncil","Mage Council", LocationCategory.CRIMSON),
+    THRONEROOM("throneroom", "Throne Room", LocationCategory.CRIMSON),
+    MAGECOUNCIL("magecouncil", "Mage Council", LocationCategory.CRIMSON),
     //DUNGEONS
     DUNGEONHUB("dungeonhub", "Dungeon Hub", LocationCategory.DN),
     CATACOMBS("catacombs", "The Catacombs", LocationCategory.DN),
