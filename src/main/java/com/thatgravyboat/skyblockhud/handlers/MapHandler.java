@@ -73,7 +73,7 @@ public class MapHandler {
         PARK(1f, 211, 230, 480, 133, 478, 134, new ResourceLocation("skyblockhud", "maps/park.png"), Collections.emptyList()),
         THEEND(1f, 338, 283, 787, 403, 788, 406, new ResourceLocation("skyblockhud", "maps/end.png"), Collections.emptyList()),
         DN(1f, 171, 219, 145, 87, 144, 90, new ResourceLocation("skyblockhud", "maps/dn.png"), Collections.emptyList()),
-        GOLDMINE(2f, 134, 134, 278, 278, 144, 90, new ResourceLocation("skyblockhud", "maps/gold.png"), Collections.emptyList()),
+        GOLDMINE(2f, 134, 134, 134, 134, 144, 90, new ResourceLocation("skyblockhud", "maps/gold.png"), Collections.emptyList()),
         JERRY(1f, 215, 226, 96, 96, 96, 98, new ResourceLocation("skyblockhud", "maps/jerry.png"), Collections.emptyList());
 
         public float scaleFactor;

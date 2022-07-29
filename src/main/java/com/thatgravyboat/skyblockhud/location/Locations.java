@@ -37,6 +37,8 @@ public enum Locations {
     WIZARDTOWER("wizardtower", "Wizard Tower", LocationCategory.HUB),
     THAUMATURGIST("thaumaturgist", "Thaumaturgist", LocationCategory.HUB),
     HEXATORUM("hexatorum", "Hexatorum", LocationCategory.HUB),
+    SHENSAUCTION("shensauction", "Shen's Auction", LocationCategory.HUB),
+    REGALIAROOM("regaliaroom", "Regalia Room", LocationCategory.HUB),
     //THE BARN
     THEBARN("thebarn", "The Barn", LocationCategory.BARN),
     WINDMILL("windmill", "Windmill", LocationCategory.BARN),
