@@ -108,7 +108,7 @@ public class RPGHud extends Gui {
 
             Utils.drawStringScaled("" + mc.thePlayer.experienceLevel, font, (rightAligned ? 112 : 14) + x - (font.getStringWidth("" + mc.thePlayer.experienceLevel) / 2f), 34 + y, false, 8453920, 0.75f);
 
-            Utils.drawStringScaled(ChatFormatting.RED + " \u2764 " + health + "/" + maxHealth + ChatFormatting.GREEN + " \u2748 " + defense, font, (rightAligned ? 10 : 42) + x, 8 + y, true, 0xffffff, 0.75f);
+            Utils.drawStringScaled(ChatFormatting.RED + " \u2764 " + health + ChatFormatting.AQUA + " \u270E " + mana + ChatFormatting.GREEN + " \u2748 " + defense, font, (rightAligned ? 10 : 42) + x, 8 + y, true, 0xffffff, 0.75f);
 
             GlStateManager.color(255, 255, 255);
             GlStateManager.disableBlend();
