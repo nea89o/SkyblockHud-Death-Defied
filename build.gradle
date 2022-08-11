@@ -22,7 +22,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = '1.14'
+version = '1.14.1'
 group= 'com.thatgravyboat.skyblockhud'
 archivesBaseName = 'SkyBlockHud'
 String mixinClassifier = 'dep'
