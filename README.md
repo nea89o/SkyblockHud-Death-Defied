@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![discord badge](https://img.shields.io/discord/516977525906341928?label=discord&color=9089DA&logo=discord&style=for-the-badge)](https://inv.wtf/skyclient)
+[![discord badge](https://img.shields.io/discord/780181693100982273?label=discord&color=9089DA&logo=discord&style=for-the-badge)](https://discord.gg/VPqDRWSHN2)
 [![made with java](https://img.shields.io/badge/Made%20With-Java-orange?style=for-the-badge&logo=java&logocolor=white)](https://www.java.com/)
 [![go download](https://img.shields.io/github/downloads/raydeeux/Skyblockhud-reborn/total?color=blue&style=for-the-badge&label=Downloads&logoColor=blue)](https://github.com/RayDeeUx/SkyblockHud-Reborn/releases)
 
