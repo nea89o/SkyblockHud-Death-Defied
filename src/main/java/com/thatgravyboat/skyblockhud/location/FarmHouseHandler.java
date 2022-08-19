@@ -21,7 +21,7 @@ public class FarmHouseHandler {
             for (Medal value : Medal.values()) {
                 if (event.formattedLine.contains(value.name())) {
                     try {
-                        medals[value.ordinal()] = Integer.parseInt(event.formattedLine.replace("medals:", "").replace(value.name(), "").trim());
+                        medals[value.ordinal()] = Integer.parseInt(event.formattedLine.replace("medals:", "").replace(value.name(), "").trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                     break;
                 }

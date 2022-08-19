@@ -95,7 +95,7 @@ public class SlayerHandler {
         if (!isDoingSlayer && event.formattedLine.equals("Slayer Quest")) isDoingSlayer = true;
 
         if (isDoingSlayer) {
-            String line = event.formattedLine.toLowerCase();
+            String line = event.formattedLine.toLowerCase().replaceAll(",", "");
             Matcher killMatcher = KILLS_REGEX.matcher(line);
 
             if (killMatcher.find()) {

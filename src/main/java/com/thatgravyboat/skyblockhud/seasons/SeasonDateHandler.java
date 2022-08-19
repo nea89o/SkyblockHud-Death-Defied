@@ -68,6 +68,6 @@ public class SeasonDateHandler {
     }
 
     public static int removeSeason(String seasonDate) {
-        return Integer.parseInt(Pattern.compile("[^0-9]").matcher(seasonDate.toLowerCase()).replaceAll("").trim());
+        return Integer.parseInt(Pattern.compile("[^0-9]").matcher(seasonDate.toLowerCase()).replaceAll("").trim().replaceAll(",", ""));
     }
 }

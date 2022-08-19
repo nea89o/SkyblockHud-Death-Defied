@@ -24,7 +24,7 @@ public class MixinItemStack implements IAbility {
             if (abilityMatcher != null) {
                 ability = abilityMatcher.group(1);
                 try {
-                    abilityTime = Integer.parseInt(abilityMatcher.group(2).trim());
+                    abilityTime = Integer.parseInt(abilityMatcher.group(2).trim().replaceAll(",", ""));
                 } catch (Exception ignored) {}
             }
         }

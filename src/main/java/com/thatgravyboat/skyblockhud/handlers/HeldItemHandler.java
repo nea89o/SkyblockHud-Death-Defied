@@ -23,7 +23,7 @@ public class HeldItemHandler extends Gui {
         Matcher matcher = MANA_COST_REGEX.matcher(lore);
         if (matcher.find()) {
             try {
-                return Integer.parseInt(matcher.group(1));
+                return Integer.parseInt(matcher.group(1).replaceAll(",", ""));
             } catch (Exception ignored) {}
         }
         return 0;

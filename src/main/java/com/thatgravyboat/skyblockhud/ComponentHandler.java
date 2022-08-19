@@ -54,7 +54,7 @@ public class ComponentHandler {
                             } else if (LocationHandler.getCurrentLocation().getCategory().equals(LocationCategory.MUSHROOMDESERT)) {
                                 if (formattedTabListPlayer.toLowerCase().contains("pelts:")) {
                                     try {
-                                        FarmingIslandHandler.pelts = Integer.parseInt(formattedTabListPlayer.toLowerCase().replace("pelts:", "").trim());
+                                        FarmingIslandHandler.pelts = Integer.parseInt(formattedTabListPlayer.toLowerCase().replace("pelts:", "").trim().replaceAll(",", ""));
                                     } catch (Exception ignored) {}
                                 }
                             }

@@ -73,13 +73,13 @@ public class MinesHandler {
 
     public static void parseMithril(String line) {
         try {
-            mithril = Integer.parseInt(line.toLowerCase().replace("mithril powder:", "").trim());
+            mithril = Integer.parseInt(line.toLowerCase().replace("mithril powder:", "").trim().replaceAll(",", ""));
         } catch (Exception ignored) {}
     }
 
     public static void parseGemstone(String line) {
         try {
-            gemstone = Integer.parseInt(line.toLowerCase().replace("gemstone powder:", "").trim());
+            gemstone = Integer.parseInt(line.toLowerCase().replace("gemstone powder:", "").trim().replaceAll(",", ""));
         } catch (Exception ignored) {}
     }
 
@@ -87,17 +87,17 @@ public class MinesHandler {
     public void onSidebarLineUpdate(SidebarLineUpdateEvent event) {
         if (event.formattedLine.toLowerCase().contains("heat")) {
             try {
-                MiningHud.setHeat(Integer.parseInt(event.formattedLine.toLowerCase().replace("heat:", "").trim()));
+                MiningHud.setHeat(Integer.parseInt(event.formattedLine.toLowerCase().replace("heat:", "").trim().replaceAll(",", "")));
             } catch (Exception ignored) {}
         }
         if (event.formattedLine.toLowerCase().contains("mithril")) {
             try {
-                mithril = Integer.parseInt(event.formattedLine.toLowerCase().replace("mithril:", "").trim());
+                mithril = Integer.parseInt(event.formattedLine.toLowerCase().replace("mithril:", "").trim().replaceAll(",", ""));
             } catch (Exception ignored) {}
         }
         if (event.formattedLine.toLowerCase().contains("gemstone")) {
             try {
-                gemstone = Integer.parseInt(event.formattedLine.toLowerCase().replace("gemstone:", "").trim());
+                gemstone = Integer.parseInt(event.formattedLine.toLowerCase().replace("gemstone:", "").trim().replaceAll(",", ""));
             } catch (Exception ignored) {}
         }
         if (event.formattedLine.toLowerCase().contains("event")) {
@@ -115,7 +115,7 @@ public class MinesHandler {
         if (event.formattedLine.toLowerCase(Locale.ENGLISH).contains("nearby players")) {
             MinesHandler.currentEvent = Event.TOGETHER;
             try {
-                MinesHandler.eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("nearby players:", "").trim());
+                MinesHandler.eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("nearby players:", "").trim().replaceAll(",", ""));
             } catch (Exception ignored) {}
         }
 
@@ -123,31 +123,31 @@ public class MinesHandler {
             if (MinesHandler.currentEvent == Event.TICKET) {
                 if (event.formattedLine.toLowerCase().contains("pool:")) {
                     try {
-                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("pool:", "").trim().split("/")[0].trim());
+                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("pool:", "").trim().replaceAll(",", "").split("/")[0].trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 } else if (event.formattedLine.toLowerCase().contains("tickets:")) {
                     try {
-                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("tickets:", "").split("\\(")[0].trim());
+                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("tickets:", "").split("\\(")[0].trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 }
             } else if (MinesHandler.currentEvent == Event.GOBLIN) {
                 if (event.formattedLine.toLowerCase().contains("remaining:")) {
                     try {
-                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("goblins", "").replace("remaining:", "").trim());
+                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("goblins", "").replace("remaining:", "").trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 } else if (event.formattedLine.toLowerCase().contains("your kills:") && !event.formattedLine.toLowerCase().contains("(")) {
                     try {
-                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your kills:", "").trim());
+                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your kills:", "").trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 }
             } else if (MinesHandler.currentEvent == Event.GOURMAND) {
                 if (event.formattedLine.toLowerCase().contains("remaining:")) {
                     try {
-                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("tasty mithril", "").replace("remaining:", "").trim());
+                        eventMax = Integer.parseInt(event.formattedLine.toLowerCase().replace("tasty mithril", "").replace("remaining:", "").trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 } else if (event.formattedLine.toLowerCase().contains("your tasty mithril:") && !event.formattedLine.toLowerCase().contains("(")) {
                     try {
-                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your tasty mithril:", "").trim());
+                        eventProgress = Integer.parseInt(event.formattedLine.toLowerCase().replace("your tasty mithril:", "").trim().replaceAll(",", ""));
                     } catch (Exception ignored) {}
                 }
             }

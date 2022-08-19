@@ -101,6 +101,7 @@ public class ActionBarParsing {
         if (!lastActionBar.equals(input)) {
             lastActionBar = input;
             String bar = Utils.removeColor(input);
+            String fuckHypixelForAddingCommas = bar;
             bar = bar.replaceAll(",", "");
 
             Matcher HealthMatcher = HealthRegex.matcher(bar);
@@ -108,7 +109,7 @@ public class ActionBarParsing {
             Matcher ManaMatcher = ManaRegex.matcher(bar);
             Matcher ManaUseMatcher = ManaDecreaseRegex.matcher(bar);
             Matcher ManaOverflowMatcher = ManaOverflowRegex.matcher(bar);
-            Matcher XpGainMatcher = XpGainRegex.matcher(bar);
+            Matcher XpGainMatcher = XpGainRegex.matcher(fuckHypixelForAddingCommas);
             // Matcher DominusMatcher = DominusRegex.matcher(bar);
 
             boolean healthFound = HealthMatcher.find();
