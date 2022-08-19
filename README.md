@@ -5,10 +5,10 @@
 <div align="center">
 
 [![discord badge](https://img.shields.io/discord/780181693100982273?label=discord&color=9089DA&logo=discord&style=for-the-badge)](https://discord.gg/VPqDRWSHN2)
-[![made with java](https://img.shields.io/badge/Made%20With-Java-orange?style=for-the-badge&logo=java&logocolor=white)](https://www.java.com/)
+[![made with java](https://img.shields.io/badge/Made%20With-Java-orange?style=for-the-badge&logo=java&logocolor=white)](https://www.java.com/)<br>
 [![go download](https://img.shields.io/github/downloads/raydeeux/Skyblockhud-reborn/total?color=blue&style=for-the-badge&label=Downloads@Total&logoColor=blue)](https://github.com/RayDeeUx/SkyblockHud-Reborn/releases)
 [![go download](https://img.shields.io/github/downloads/raydeeux/Skyblockhud-reborn/latest/total?color=blue&style=for-the-badge&label=Downloads@Latest&logoColor=blue)](https://github.com/RayDeeUx/SkyblockHud-Reborn/releases/latest)
-
+	
 <!--
 [![line count](https://img.shields.io/tokei/lines/github/ThatGravyBoat/SkyblockHud?style=for-the-badge&logo=github&logocolor=white)](https://github.com/Moulberry/Hychat)
 [![workflow status](https://img.shields.io/github/workflow/status/ThatGravyBoat/SkyblockHud/JSON/master?label=Workflow%20status&style=for-the-badge&logo=github&logocolor=white)](https://github.com/Moulberry/Hychat)
