@@ -310,7 +310,7 @@ public class SBHConfig extends Config {
         public boolean showPlayerLocation = false;
 
         @Expose
-        @ConfigOption(name = "Show Mini-Map", desc = "Shows the Mini-Map on your overlay if turned off you can still use /sbhmap to see the map in fullscreen.")
+        @ConfigOption(name = "Show Mini-Map", desc = "Shows the Mini-Map on your overlay. If this is turned off, you can still use /sbhmap to see the map in fullscreen.")
         @ConfigEditorBoolean
         public boolean showMiniMap = false;
 
