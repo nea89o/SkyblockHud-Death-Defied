@@ -30,8 +30,8 @@ import org.lwjgl.opengl.GL11;
 
 public class SBHConfigEditor extends GuiElement {
 
-    private static final ResourceLocation[] socialsIco = new ResourceLocation[] { DISCORD, TWITTER };
-    private static final String[] socialsLink = new String[] { "https://discord.gg/moulberry", "https://twitter.com/thatgravyboat/" };
+    private static final ResourceLocation[] socialsIco = new ResourceLocation[] { DISCORD, DISCORD, TWITTER };
+    private static final String[] socialsLink = new String[] { "https://inv.wtf/skyclient", "https://discord.gg/moulberry", "https://twitter.com/thatgravyboat/" };
 
     private final long openedMillis;
 
@@ -146,7 +146,7 @@ public class SBHConfigEditor extends GuiElement {
         RenderUtils.drawFloatingRectDark(x + 5, y + 5, xSize - 10, 20, false);
 
         FontRenderer fr = Minecraft.getMinecraft().fontRendererObj;
-        TextRenderUtils.drawStringCenteredScaledMaxWidth("SkyBlockHud by " + EnumChatFormatting.RED + "ThatGravyBoat" + EnumChatFormatting.RESET + ", config by " + EnumChatFormatting.DARK_PURPLE + "Moulberry", fr, x + xSize / 2f, y + 15, false, 200, 0xa0a0a0);
+        TextRenderUtils.drawStringCenteredScaledMaxWidth("SkyBlockHud v1.14.4 by " + EnumChatFormatting.RED + "ThatGravyBoat" + EnumChatFormatting.RESET + ", config by " + EnumChatFormatting.DARK_PURPLE + "Moulberry" + EnumChatFormatting.RESET + ", maintained by " + EnumChatFormatting.AQUA + "Erymanthus", fr, x + xSize / 2f, y + 15, false, 200, 0xa0a0a0);
 
         RenderUtils.drawFloatingRectDark(x + 4, y + 49 - 20, 140, ySize - 54 + 20, false);
 
