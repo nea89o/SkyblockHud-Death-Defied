@@ -30,6 +30,8 @@ import org.lwjgl.opengl.GL11;
 
 public class SBHConfigEditor extends GuiElement {
 
+    //apparently if you want your link to show up first you gotta put it at the very end of the array
+
     private static final ResourceLocation[] socialsIco = new ResourceLocation[] { DISCORD, DISCORD, TWITTER };
     private static final String[] socialsLink = new String[] { "https://inv.wtf/skyclient", "https://discord.gg/moulberry", "https://twitter.com/thatgravyboat/" };
 
