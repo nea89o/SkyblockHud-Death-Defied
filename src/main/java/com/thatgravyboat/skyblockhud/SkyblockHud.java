@@ -48,11 +48,10 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import org.lwjgl.input.Keyboard;
 
-@Mod(modid = SkyblockHud.MODID, version = SkyblockHud.VERSION)
+@Mod(modid = SkyblockHud.MODID, useMetadata = true)
 public class SkyblockHud {
 
     public static final String MODID = "skyblockhud";
-    public static final String VERSION = "1.13";
 
     public static SBHConfig config;
 

@@ -21,4 +21,5 @@ deps
 # other
 eclipse
 run
+.vscode
 .DS_Store
