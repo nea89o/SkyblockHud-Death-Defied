@@ -7,8 +7,8 @@
     "mcversion": "1.8.9",
     "url": "https://github.com/RayDeeUx/SkyblockHud-Reborn",
     "updateUrl": "",
-    "authorList": ["ThatGravyBoat", "RayDeezNuts"],
-    "credits": "Map Icons by ModCruel",
+    "authorList": ["ThatGravyBoat", "Erymanthus"],
+    "credits": ["ModCruel — map icon textures", "nea89 — switching from forgegradle to arch loom"],
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
