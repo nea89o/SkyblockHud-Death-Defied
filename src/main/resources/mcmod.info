@@ -8,7 +8,7 @@
     "url": "https://github.com/RayDeeUx/SkyblockHud-Reborn",
     "updateUrl": "",
     "authorList": ["ThatGravyBoat", "Erymanthus"],
-    "credits": ["ModCruel — map icon textures", "nea89 — switching from forgegradle to arch loom"],
+    "credits": "ModCruel: map icon textures | nea89: switching from ForgeGradle to Arch Loom",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
