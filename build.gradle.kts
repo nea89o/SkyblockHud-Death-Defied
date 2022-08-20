@@ -84,7 +84,7 @@ tasks.shadowJar {
 
 
 val remapJar by tasks.named<net.fabricmc.loom.task.RemapJarTask>("remapJar") {
-    archiveClassifier.set("all")
+    archiveClassifier.set("useThisVersionInUserEnvironment")
     from(tasks.shadowJar)
     input.set(tasks.shadowJar.get().archiveFile)
 }
