@@ -57,7 +57,7 @@ public class ActionBarParsing {
             if (SkyblockHud.hasSkyblockScoreboard() && SkyblockHud.config.rpg.showRpgHud) {
                 parseActionBar(event.message.getUnformattedText());
             }
-            if (SkyblockHud.config.mining.showDrillBar) {
+            if (SkyblockHud.config.mining.showDrillBar != 0) {
                 String bar = Utils.removeColor(event.message.getUnformattedText());
                 Matcher DrillFuelMatcher = DrillFuelRegex.matcher(bar);
                 if (DrillFuelMatcher.find()) {
@@ -91,7 +91,7 @@ public class ActionBarParsing {
                 }
                 event.message = lastLowEditedActionBar;
             }
-            if (SkyblockHud.config.mining.showDrillBar) {
+            if (SkyblockHud.config.mining.showDrillBar != 0) {
                 event.message = new ChatComponentText(DrillFuelReplaceRegex.matcher(event.message.getUnformattedText()).replaceAll("").trim());
             }
         }
