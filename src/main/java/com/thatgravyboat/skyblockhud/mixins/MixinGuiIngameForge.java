@@ -65,7 +65,7 @@ public class MixinGuiIngameForge {
             if (prePost(EXPERIENCE, eventParent)) return;
             postPost(EXPERIENCE, eventParent);
         } else if (SkyblockHud.config.mining.barMode == 1) {
-            if (!SkyblockHud.config.renderer.hideXpBar && (SkyblockHud.config.mining.showDrillBar || SkyblockHud.config.mining.showHeatBar) && SkyblockHud.hasSkyblockScoreboard()) {
+            if (!SkyblockHud.config.renderer.hideXpBar && (SkyblockHud.config.mining.showDrillBar != 0 || SkyblockHud.config.mining.showHeatBar) && SkyblockHud.hasSkyblockScoreboard()) {
                 if (MiningHud.getHeat() > 0 || Utils.isDrill(Minecraft.getMinecraft().thePlayer.getHeldItem())) {
                     ci.cancel();
                     if (prePost(EXPERIENCE, eventParent)) return;
@@ -82,7 +82,7 @@ public class MixinGuiIngameForge {
             if (prePost(JUMPBAR, eventParent)) return;
             postPost(JUMPBAR, eventParent);
         } else if (SkyblockHud.config.mining.barMode == 1) {
-            if (!SkyblockHud.config.renderer.hideXpBar && (SkyblockHud.config.mining.showDrillBar || SkyblockHud.config.mining.showHeatBar) && SkyblockHud.hasSkyblockScoreboard()) {
+            if (!SkyblockHud.config.renderer.hideXpBar && (SkyblockHud.config.mining.showDrillBar != 0 || SkyblockHud.config.mining.showHeatBar) && SkyblockHud.hasSkyblockScoreboard()) {
                 if (MiningHud.getHeat() > 0 || Utils.isDrill(Minecraft.getMinecraft().thePlayer.getHeldItem())) {
                     ci.cancel();
                     if (prePost(JUMPBAR, eventParent)) return;

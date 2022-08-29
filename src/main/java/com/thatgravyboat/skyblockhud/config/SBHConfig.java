@@ -375,9 +375,9 @@ public class SBHConfig extends Config {
 
         @Expose
         @ConfigOption(name = "Show Drill Bar", desc = "Allows you to show or hide the Drill Bar.")
-        @ConfigEditorBoolean
         @ConfigAccordionId(id = 4)
-        public boolean showDrillBar = true;
+        @ConfigEditorDropdown(values = {"Do not Show", "Show percentage", "Show total value"}, initialIndex = 1)
+        public int showDrillBar = 1;
 
         @Expose
         @ConfigOption(name = "Show Heat Bar", desc = "Allows you to show or hide the Heat Bar.")

@@ -30,14 +30,14 @@ public class MiningHud extends Gui {
 
     @SubscribeEvent
     public void renderOverlay(RenderGameOverlayEvent.Post event) {
-        if (Utils.overlayShouldRender(event.type, SkyblockHud.hasSkyblockScoreboard(), SkyblockHud.config.mining.showDrillBar || SkyblockHud.config.mining.showHeatBar)) {
+        if (Utils.overlayShouldRender(event.type, SkyblockHud.hasSkyblockScoreboard(), SkyblockHud.config.mining.showDrillBar != 0 || SkyblockHud.config.mining.showHeatBar)) {
             Minecraft mc = Minecraft.getMinecraft();
 
             if (SkyblockHud.config.mining.barMode == 1) {
-                if (heat > 0 && Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar && SkyblockHud.config.mining.showHeatBar) {
+                if (heat > 0 && Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar != 0 && SkyblockHud.config.mining.showHeatBar) {
                     renderFuelBar(mc, (event.resolution.getScaledWidth() / 2) - 91, event.resolution.getScaledHeight() - 31);
                     renderHeatBar(mc, (event.resolution.getScaledWidth() / 2) + 46, event.resolution.getScaledHeight() - 31);
-                } else if (Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar) {
+                } else if (Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar != 0) {
                     renderFuelBar(mc, (event.resolution.getScaledWidth() / 2) - 68, event.resolution.getScaledHeight() - 31);
                 } else if (heat > 0 && SkyblockHud.config.mining.showHeatBar) {
                     renderHeatBar(mc, (event.resolution.getScaledWidth() / 2) - 22, event.resolution.getScaledHeight() - 31);
@@ -47,7 +47,7 @@ public class MiningHud extends Gui {
                     Position position = SkyblockHud.config.mining.heatBar;
                     renderHeatBar(mc, position.getAbsX(event.resolution, 45), position.getAbsY(event.resolution, 7));
                 }
-                if (Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar) {
+                if (Utils.isDrill(mc.thePlayer.getHeldItem()) && SkyblockHud.config.mining.showDrillBar != 0) {
                     Position position = SkyblockHud.config.mining.drillBar;
                     renderFuelBar(mc, position.getAbsX(event.resolution, 136), position.getAbsY(event.resolution, 7));
                 }
@@ -62,8 +62,14 @@ public class MiningHud extends Gui {
         mc.renderEngine.bindTexture(Textures.texture.mines);
         drawTexturedModalRect(x, y, 0, 0, 136, 7);
         drawTexturedModalRect(x, y, 0, 7, Utils.lerp((float) fuel / (float) maxFuel, 0, 136), 7);
-        String percentageText = Math.round(((float) fuel / (float) maxFuel) * 100) + "%";
-        this.drawCenteredString(mc.fontRendererObj, percentageText, x + 68, y - 2, 0xffffff);
+
+        String renderedText;
+        if (SkyblockHud.config.mining.showDrillBar == 1) {
+            renderedText = Math.round(((float) fuel / (float) maxFuel) * 100) + "%";
+        } else {
+            renderedText = fuel + "/" + maxFuel;
+        }
+        this.drawCenteredString(mc.fontRendererObj, renderedText, x + 68, y - 2, 0xffffff);
     }
 
     private void renderHeatBar(Minecraft mc, int x, int y) {
