@@ -310,51 +310,51 @@ public class SBHConfig extends Config {
         public boolean showPlayerLocation = false;
 
         @Expose
-        @ConfigOption(name = "Show Mini-Map", desc = "Shows the Mini-Map on your overlay. If this is turned off, you can still use /sbhmap to see the map in fullscreen.")
+        @ConfigOption(name = "Show Mini-Map", desc = "Please leave this feature disabled. SkyGuide by DeDiamondPro has a far better minimap: https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorBoolean
         public boolean showMiniMap = false;
 
         @Expose
-        @ConfigOption(name = "Map Locations", desc = "Drag and drop a location from this list into the trash can if you would like to disable SBH's map for that location, and use maps from other mods.")
+        @ConfigOption(name = "Map Locations", desc = "Please use SkyGuide by DeDiamondPro: https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorDraggableList(exampleText = { "Hub", "The Barn", "Mushroom Desert", "Gold Mine", "Deep Caverns (No Map Yet)", "Spider's Den", "The Park", "Crimson Isles", "Dungeon Hub", "Jerry's Workshop (WIP)", "The End", "Dwarven Mines", "Crystal Hollows" })
         public List<Integer> mapLocations = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12));
 
         @Expose
-        @ConfigOption(name = "Mini-Map Position", desc = "Allows you to change the position of the Mini-Map.")
+        @ConfigOption(name = "Mini-Map Position", desc = "Please use SkyGuide by DeDiamondPro: https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorButton(runnableId = "map", buttonText = "Edit")
         public Position miniMapPosition = new Position(0, 100, false, false);
 
         @Expose
-        @ConfigOption(name = "Icons", desc = "")
+        @ConfigOption(name = "Icons", desc = "Did you know that SkyGuide's features are far more suitable for the optimal Skyblock experience? https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorAccordion(id = 3)
         public boolean icons = false;
 
         @Expose
-        @ConfigOption(name = "NPC", desc = "Show NPC Icons")
+        @ConfigOption(name = "NPC", desc = "DeDiamondPro's SkyGuide: https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showNpcIcons = true;
 
         @Expose
-        @ConfigOption(name = "Info", desc = "Show Info Icons")
+        @ConfigOption(name = "Info", desc = "just install SkyGuide dammit")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showInfoIcons = true;
 
         @Expose
-        @ConfigOption(name = "Misc", desc = "Show Misc Icons")
+        @ConfigOption(name = "Misc", desc = "https://github.com/DeDiamondPro/SkyGuide/")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showMiscIcons = true;
 
         @Expose
-        @ConfigOption(name = "Shops", desc = "Show Shop Icons")
+        @ConfigOption(name = "Shops", desc = "use SkyGuide!!!!!")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showShopIcons = true;
 
         @Expose
-        @ConfigOption(name = "Quests", desc = "Show Quest Icons")
+        @ConfigOption(name = "Quests", desc = "please just use SkyGuide istg")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showQuestIcons = false;
