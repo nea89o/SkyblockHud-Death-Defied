@@ -354,7 +354,7 @@ public class SBHConfig extends Config {
         public boolean showShopIcons = true;
 
         @Expose
-        @ConfigOption(name = "Quests", desc = "please just use SkyGuide istg")
+        @ConfigOption(name = "Quests", desc = "Ery is too lazy to update maps, please use SkyGuide by DeDiamondPro. This is your final warning and I'm not asking nicely anymore.")
         @ConfigEditorBoolean
         @ConfigAccordionId(id = 3)
         public boolean showQuestIcons = false;
