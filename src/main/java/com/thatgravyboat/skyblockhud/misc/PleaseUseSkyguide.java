@@ -8,12 +8,13 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
+import com.thatgravyboat.skyblockhud.SkyblockHud;
 
 /***********************
  * PleaseUseSkyguide
  * 
- * A Java class written by Erymanthus / RayDeeUx
- * and DeDiamondPro as a means to minimize instances
+ * A Java class written by Erymanthus / RayDeeUx,
+ * DeDiamondPro, and KTibow as a means to minimize instances
  * of enabling SBHud's minimap with SkyGuide installed.
  * 
  * God, would this shit even work?
