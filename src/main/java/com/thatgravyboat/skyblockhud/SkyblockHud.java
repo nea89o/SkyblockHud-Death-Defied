@@ -13,6 +13,7 @@ import com.thatgravyboat.skyblockhud.config.SBHConfig;
 import com.thatgravyboat.skyblockhud.dungeons.DungeonHandler;
 import com.thatgravyboat.skyblockhud.handlers.*;
 import com.thatgravyboat.skyblockhud.location.*;
+import com.thatgravyboat.skyblockhud.misc.*;
 import com.thatgravyboat.skyblockhud.overlay.DungeonOverlay;
 import com.thatgravyboat.skyblockhud.overlay.MiningHud;
 import com.thatgravyboat.skyblockhud.overlay.OverlayHud;
@@ -131,6 +132,12 @@ public class SkyblockHud {
                 writer.write(gson.toJson(config));
             }
         } catch (IOException ignored) {}
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        MinecraftForge.EVENT_BUS.register(new PleaseUseSkyguide());
     }
 
     @EventHandler
