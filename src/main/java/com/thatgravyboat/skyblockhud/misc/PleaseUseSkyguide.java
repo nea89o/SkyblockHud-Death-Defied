@@ -25,8 +25,8 @@ public class PleaseUseSkyguide {
 
     @SubscribeEvent
     public void sendWarning(TickEvent.ClientTickEvent event){
-        if (Minecraft.getMinecraft().thePlayer == null || !SkyblockHud.config.Map.showMiniMap || !Loader.isModLoaded("skyguide")) return;
-        SkyblockHud.config.Map.showMiniMap = false;
+        if (Minecraft.getMinecraft().thePlayer == null || !SkyblockHud.config.map.showMiniMap || !Loader.isModLoaded("skyguide")) return;
+        SkyblockHud.config.map.showMiniMap = false;
         if (hasSentWarningForSession) return;
         Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "[SBH] SkyGuide by DeDiamondPro has been detected. As a result, SBHud's minimap has been disabled. Please use SkyGuide instead."));
         //prevent sending warning more than once per session
