@@ -60,7 +60,7 @@ public class CooldownHandler {
         if (event.type != 2 && message.equals("You used your Mining Speed Boost Pickaxe Ability!")) {
             if (Minecraft.getMinecraft().thePlayer.getHeldItem() != null) {
                 IAbility ability = (IAbility) (Object) Minecraft.getMinecraft().thePlayer.getHeldItem();
-                if (ability.getAbility().equals("Mining Speed Boost")) {
+                if ("Mining Speed Boost".equals(ability.getAbility())) {
                     addCooldown("Mining Speed Boost", ability.getAbilityTime());
                 }
             }
