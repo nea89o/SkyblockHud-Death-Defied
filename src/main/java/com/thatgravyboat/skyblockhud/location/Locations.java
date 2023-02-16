@@ -7,6 +7,8 @@ public enum Locations {
     //PRIVATE ISLAND
     YOURISLAND("yourisland", "Your Island", LocationCategory.ISLAND),
     GUESTISLAND("guestisland", "Guest Island", LocationCategory.ISLAND),
+    THEGARDEN("garden", "The Garden", LocationCategory.ISLAND),
+    GUESTGARDEN("guestgarden", "Guest Garden", LocationCategory.ISLAND),
     MOULBERRYSISLAND("moulberryisland", "Cool Dude Hub", LocationCategory.ISLAND),
     //HUB
     VILLAGE("village", "Village", LocationCategory.HUB),
@@ -163,7 +165,8 @@ public enum Locations {
     LOSTPRECURSORCITY("lostprecursorcity", "Lost Precursor City", LocationCategory.CRYSTALHOLLOWS),
     CRYSTALNUCLEUS("crystalnucleus", "Crystal Nucleus", LocationCategory.CRYSTALHOLLOWS),
     CRYSTALHOLLOWS("crystalhollows", "Crystal Hollows", LocationCategory.CRYSTALHOLLOWS),
-    FAIRYGROTTO("fairygrotto", "Fairy Grotto", LocationCategory.CRYSTALHOLLOWS);
+    FAIRYGROTTO("fairygrotto", "Fairy Grotto", LocationCategory.CRYSTALHOLLOWS),
+    ;
 
     private final String name;
     private final String displayName;
