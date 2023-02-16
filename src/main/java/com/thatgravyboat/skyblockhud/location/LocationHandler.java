@@ -20,10 +20,13 @@ public class LocationHandler {
             currentLocation = Locations.CATACOMBS;
         } else {
             Locations locations;
-            if (isGuesting && location.endsWith("GARDEN")) {
+            boolean isPlot = location.startsWith("PLOT");
+            if (isGuesting && (isPlot || location.endsWith("GARDEN"))) {
                 locations = Locations.GUESTGARDEN;
             } else if (isGuesting) {
                 locations = Locations.GUESTISLAND;
+            } else if (isPlot) {
+                locations = Locations.THEGARDEN;
             } else {
                 locations = Locations.get(location);
             }
