@@ -55,7 +55,7 @@ public class OverlayHud extends Gui {
         drawSeasonAndDate(width, offset, mc);
 
         //REDSTONE PERCENT
-        drawRedstone(width, offset, mc);
+        drawIslandInformation(width, offset, mc);
 
         // LOCATION
         drawLocation(width, offset, mc);
@@ -108,7 +108,7 @@ public class OverlayHud extends Gui {
         drawString(font, LocationHandler.getCurrentLocation().getDisplayName(), (width / 2) - 19 - (font.getStringWidth(LocationHandler.getCurrentLocation().getDisplayName())), offset + (bossBarVisible ? 23 : 6), 0xFFFFFF);
     }
 
-    public void drawRedstone(int width, int offset, Minecraft mc) {
+    public void drawIslandInformation(int width, int offset, Minecraft mc) {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         mc.renderEngine.bindTexture(Textures.texture.stats);
         int redstoneColor = IslandHandler.redstone > 90 ? 0xFF0000 : IslandHandler.redstone > 75 ? 0xC45B00 : IslandHandler.redstone > 50 ? 0xFFFF55 : 0x55FF55;
@@ -116,6 +116,10 @@ public class OverlayHud extends Gui {
             drawTexturedModalRect((width / 2) - 15, offset + (bossBarVisible ? 51 : 34), 0, 48, 30, 18);
             drawTexturedModalRect((width / 2) - 4, offset + (bossBarVisible ? 51 : 34), 59, 0, 8, 8);
             drawCenteredString(mc.fontRendererObj, IslandHandler.redstone + "%", (width / 2), offset + (bossBarVisible ? 58 : 41), redstoneColor);
+        } else if (IslandHandler.hadCleanupPercentage && IslandHandler.cleanupPercentage < 100) {
+            drawTexturedModalRect((width / 2) - 15, offset + (bossBarVisible ? 51 : 34), 0, 48, 30, 18);
+            drawTexturedModalRect((width / 2) - 4, offset + (bossBarVisible ? 51 : 34), 187, 0, 8, 8);
+            drawCenteredString(mc.fontRendererObj, IslandHandler.cleanupPercentage + "%", (width / 2), offset + (bossBarVisible ? 58 : 41),  0xFFFF55);
         }
     }
 

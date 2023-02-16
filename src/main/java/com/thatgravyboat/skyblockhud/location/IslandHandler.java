@@ -1,9 +1,12 @@
 package com.thatgravyboat.skyblockhud.location;
 
+import com.thatgravyboat.skyblockhud.api.events.LocationChangeEvent;
 import com.thatgravyboat.skyblockhud.api.events.ProfileSwitchedEvent;
 import com.thatgravyboat.skyblockhud.api.events.SidebarLineUpdateEvent;
 import com.thatgravyboat.skyblockhud.utils.Utils;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.Locale;
 
 public class IslandHandler {
 
@@ -13,11 +16,21 @@ public class IslandHandler {
     public static int redstone;
     public static boolean hadRedstone;
 
+    public static float cleanupPercentage;
+    public static boolean hadCleanupPercentage;
+
     @SubscribeEvent
     public void onSidebarLineUpdate(SidebarLineUpdateEvent event) {
         hadFlightTime = checkFlightDuration(event.formattedLine);
         hadRedstone = checkRestone(event.formattedLine);
+        hadCleanupPercentage |= checkPlotClearPercentage(event.formattedLine);
     }
+
+    @SubscribeEvent
+    public void onLocationChange(LocationChangeEvent event) {
+        hadCleanupPercentage = false;
+    }
+
 
     @SubscribeEvent
     public void onProfileSwitch(ProfileSwitchedEvent event) {
@@ -25,17 +38,20 @@ public class IslandHandler {
     }
 
     public static boolean checkFlightDuration(String formatedScoreboardLine) {
-        if (LocationHandler.getCurrentLocation() == Locations.YOURISLAND && Utils.removeColor(formatedScoreboardLine.toLowerCase().trim()).contains("flight duration:")) {
+        if (LocationHandler.getCurrentLocation().getCategory() == LocationCategory.ISLAND
+                && Utils.removeColor(formatedScoreboardLine.toLowerCase().trim()).contains("flight duration:")) {
             String timeString = formatedScoreboardLine.toLowerCase().replace("flight duration:", "").replace(" ", "");
             String[] times = timeString.split(":");
             if (times.length == 2) {
                 int s = 0;
                 try {
                     s += Integer.parseInt(times[0].replaceAll(",", "")) * 60;
-                } catch (NumberFormatException ignored) {}
+                } catch (NumberFormatException ignored) {
+                }
                 try {
                     s += Integer.parseInt(times[1].replaceAll(",", ""));
-                } catch (NumberFormatException ignored) {}
+                } catch (NumberFormatException ignored) {
+                }
                 flightTime = s - 1;
             } else if (times.length == 3) {
                 int s = 0;
@@ -44,10 +60,12 @@ public class IslandHandler {
                 } catch (NumberFormatException ignored) {}
                 try {
                     s += Integer.parseInt(times[1].replaceAll(",", "")) * 60;
-                } catch (NumberFormatException ignored) {}
+                } catch (NumberFormatException ignored) {
+                }
                 try {
                     s += Integer.parseInt(times[2].replaceAll(",", ""));
-                } catch (NumberFormatException ignored) {}
+                } catch (NumberFormatException ignored) {
+                }
                 flightTime = s - 1;
             }
             return true;
@@ -55,12 +73,28 @@ public class IslandHandler {
         return false;
     }
 
+    public static boolean checkPlotClearPercentage(String formatedScoreboardLine) {
+        if (LocationHandler.getCurrentLocation() == Locations.THEGARDEN) {
+            String lowered = formatedScoreboardLine.toLowerCase(Locale.ROOT);
+            if (lowered.contains("cleanup:")) {
+                try {
+                    String s = Utils.removeWhiteSpaceAndRemoveWord(lowered, "cleanup:").replace("%", "");
+                    cleanupPercentage = Float.parseFloat(s);
+                    return true;
+                } catch (Exception ignored) {
+                }
+            }
+        }
+        return false;
+    }
+
     public static boolean checkRestone(String formatedScoreboardLine) {
         if (LocationHandler.getCurrentLocation() == Locations.YOURISLAND) {
-            if (formatedScoreboardLine.toLowerCase().contains("redstone:")) return true;
             try {
                 redstone = formatedScoreboardLine.toLowerCase().contains("redstone:") ? Integer.parseInt(Utils.removeWhiteSpaceAndRemoveWord(formatedScoreboardLine, "redstone:").replaceAll(",", "")) : 0;
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
+            return formatedScoreboardLine.toLowerCase().contains("redstone:");
         }
         return false;
     }
