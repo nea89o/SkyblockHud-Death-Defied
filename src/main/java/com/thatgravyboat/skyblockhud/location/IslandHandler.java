@@ -3,6 +3,7 @@ package com.thatgravyboat.skyblockhud.location;
 import com.thatgravyboat.skyblockhud.api.events.LocationChangeEvent;
 import com.thatgravyboat.skyblockhud.api.events.ProfileSwitchedEvent;
 import com.thatgravyboat.skyblockhud.api.events.SidebarLineUpdateEvent;
+import com.thatgravyboat.skyblockhud.api.events.SidebarPostEvent;
 import com.thatgravyboat.skyblockhud.utils.Utils;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -24,6 +25,13 @@ public class IslandHandler {
         hadFlightTime = checkFlightDuration(event.formattedLine);
         hadRedstone = checkRestone(event.formattedLine);
         hadCleanupPercentage |= checkPlotClearPercentage(event.formattedLine);
+    }
+
+    @SubscribeEvent
+    public void onSidebarUpdate(SidebarPostEvent event) {
+        for (String line : event.scores) {
+            hadCleanupPercentage |= checkPlotClearPercentage(line.replaceAll("[^a-zA-Z:0-9,%. ]", ""));
+        }
     }
 
     @SubscribeEvent
