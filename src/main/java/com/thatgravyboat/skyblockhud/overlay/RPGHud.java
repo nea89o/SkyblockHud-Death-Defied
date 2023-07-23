@@ -4,10 +4,9 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import com.thatgravyboat.skyblockhud.SkyblockHud;
 import com.thatgravyboat.skyblockhud.core.config.Position;
 import com.thatgravyboat.skyblockhud.handlers.HeldItemHandler;
+import com.thatgravyboat.skyblockhud.location.RiftHandler;
 import com.thatgravyboat.skyblockhud.textures.Textures;
 import com.thatgravyboat.skyblockhud.utils.Utils;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -15,10 +14,13 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class RPGHud extends Gui {
 
     private static int mana, maxMana, overflow = 0;
-    private static int health, maxHealth = 0;
+    private static float health, maxHealth = 0;
     // private static int dominus, maxDominus = 0;
     private static int defense = 0;
 
@@ -31,7 +33,7 @@ public class RPGHud extends Gui {
         overflow = current;
     }
 
-    public static void updateHealth(int current, int max) {
+    public static void updateHealth(float current, float max) {
         health = current;
         maxHealth = max;
     }
@@ -106,9 +108,15 @@ public class RPGHud extends Gui {
                 drawTexturedModalRect(rightAligned ? x + 19 : 41 + x, 33 + y, rightAligned ? 196 : 0, 88, Utils.lerp(mc.thePlayer.getAir() / 300f, 0, 60), 4);
             }
 
-            Utils.drawStringScaled("" + mc.thePlayer.experienceLevel, font, (rightAligned ? 112 : 14) + x - (font.getStringWidth("" + mc.thePlayer.experienceLevel) / 2f), 34 + y, false, 8453920, 0.75f);
-
-            Utils.drawStringScaled(ChatFormatting.RED + " \u2764 " + health + ChatFormatting.AQUA + " \u270E " + mana + ChatFormatting.GREEN + " \u2748 " + defense, font, (rightAligned ? 10 : 42) + x, 8 + y, true, 0xffffff, 0.75f);
+            Utils.drawStringScaled((RiftHandler.isInRift ? "" + (mc.thePlayer.experienceLevel / 60) + ":" + (mc.thePlayer.experienceLevel % 60) : "" + mc.thePlayer.experienceLevel), font, (rightAligned ? 112 : 14) + x - (font.getStringWidth("" + mc.thePlayer.experienceLevel) / 2f), 34 + y, false, 8453920, 0.75f);
+            int doubleHealth = (int) (health * 2);
+            String healthStr;
+            if (doubleHealth % 2 == 0) {
+                healthStr = "" + (doubleHealth / 2);
+            } else {
+                healthStr = "" + (doubleHealth / 2F);
+            }
+            Utils.drawStringScaled(ChatFormatting.RED + " ❤ " + healthStr + ChatFormatting.AQUA + " \u270E " + mana + ChatFormatting.GREEN + " \u2748 " + defense, font, (rightAligned ? 10 : 42) + x, 8 + y, true, 0xffffff, 0.75f);
 
             GlStateManager.color(255, 255, 255);
             GlStateManager.disableBlend();

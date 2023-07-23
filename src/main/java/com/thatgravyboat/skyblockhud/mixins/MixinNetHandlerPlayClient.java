@@ -1,12 +1,14 @@
 package com.thatgravyboat.skyblockhud.mixins;
 
 import com.thatgravyboat.skyblockhud.SkyblockHud;
+import com.thatgravyboat.skyblockhud.overlay.RPGHud;
 import com.thatgravyboat.skyblockhud.tracker.TrackerHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketThreadUtil;
+import net.minecraft.network.play.server.S06PacketUpdateHealth;
 import net.minecraft.network.play.server.S2FPacketSetSlot;
 import net.minecraft.network.play.server.S3EPacketTeams;
 import net.minecraft.scoreboard.ScorePlayerTeam;
@@ -64,4 +66,10 @@ public class MixinNetHandlerPlayClient {
         //This stops Hypixel from being stupid and spamming our logs because they dont have different ids for things.
         if (scoreplayerteam == null) ci.cancel();
     }
+
+    @Inject(method = "handleUpdateHealth(Lnet/minecraft/network/play/server/S06PacketUpdateHealth;)V", at = @At(value = "TAIL"))
+    public void onHealth(S06PacketUpdateHealth packetIn, CallbackInfo ci) {
+        RPGHud.updateHealth(packetIn.getHealth(), (Minecraft.getMinecraft().thePlayer.getMaxHealth()));
+    }
+
 }
