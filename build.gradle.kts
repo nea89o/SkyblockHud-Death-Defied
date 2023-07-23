@@ -6,7 +6,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-version = "1.16.0"
+version = "1.17.0"
 group = "com.thatgravyboat.skyblockhud"
 
 
