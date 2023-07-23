@@ -194,7 +194,45 @@ public enum Locations {
     THEDUKEDOM("dukedom", "The Dukedom", LocationCategory.CRIMSON),
     THRONEROOM("throneroom", "Throne Room", LocationCategory.CRIMSON),
     CHIEFSHUT("chiefshut", "Chief's Hut", LocationCategory.CRIMSON),
-    IGRUPANSCHICKENCOOP("igrupancoop", "Igrupan's Chicken Coop", LocationCategory.CRIMSON);
+    IGRUPANSCHICKENCOOP("igrupancoop", "Igrupan's Chicken Coop", LocationCategory.CRIMSON),
+
+    // RIFT
+    RIFT_WIZARDTOWER("wizardtower", "Wizard Tower", LocationCategory.RIFT),
+    RIFT_RIFTGALLERYENTRANCE("riftgalleryentrance", "Rift Gallery Entrance", LocationCategory.RIFT),
+    RIFT_RIFTGALLERY("riftgallery", "Rift Gallery", LocationCategory.RIFT),
+    RIFT_WYLDWOODS("wyldwoods", "Wyld Woods", LocationCategory.RIFT),
+    RIFT_THEBASTION("thebastion", "The Bastion", LocationCategory.RIFT),
+    RIFT_OTHERSIDE("otherside", "Otherside", LocationCategory.RIFT),
+    RIFT_SHIFTEDTAVERN("shiftedtavern", "Shifted Tavern", LocationCategory.RIFT),
+    RIFT_BROKENCAGE("brokencage", "Broken Cage", LocationCategory.RIFT),
+    RIFT_COLOSSEUM("colosseum", "Colosseum", LocationCategory.RIFT),
+    RIFT_AROUNDCOLOSSEUM("aroundcolosseum", "Around Colosseum", LocationCategory.RIFT),
+    RIFT_BLACKLAGOON("blacklagoon", "Black Lagoon", LocationCategory.RIFT),
+    RIFT_LAGOONCAVE("lagooncave", "Lagoon Cave", LocationCategory.RIFT),
+    RIFT_LAGOONHUT("lagoonhut", "Lagoon Hut", LocationCategory.RIFT),
+    RIFT_DREADFARM("dreadfarm", "Dreadfarm", LocationCategory.RIFT),
+    RIFT_WESTVILLAGE("westvillage", "West Village", LocationCategory.RIFT),
+    RIFT_LONELYTERRACE("lonelyterrace", "Lonely Terrace", LocationCategory.RIFT),
+    RIFT_VILLAGEPLAZA("villageplaza", "Village Plaza", LocationCategory.RIFT),
+    RIFT_TAYLORS("taylors", "Taylor's", LocationCategory.RIFT),
+    RIFT_BARRYCENTER("barrycenter", "Barry Center", LocationCategory.RIFT),
+    RIFT_INFESTEDHOUSE("infestedhouse", "Infested House", LocationCategory.RIFT),
+    RIFT_BOOKINABOOK("bookinabook","Book in a Book", LocationCategory.RIFT),
+    RIFT_HALFEATENCAVE("halfeatencave","Half-Eaten Cave", LocationCategory.RIFT),
+    RIFT_BARRYHQ("barryhq","Barry HQ", LocationCategory.RIFT),
+    RIFT_BARRIERSTREET("barrierstreet","Barrier Street", LocationCategory.RIFT),
+    RIFT_EMPTYBANK("emptybank","Empty Bank", LocationCategory.RIFT),
+    RIFT_YOURISLAND("yourisland","\"Your\" Island", LocationCategory.RIFT),
+    RIFT_MIRRORVERSE("mirrorverse","Mirrorverse", LocationCategory.RIFT),
+    RIFT_STILLGORECHTEAU("stillgorechateau","Stillgore Château", LocationCategory.RIFT),
+    RIFT_OUBLIETTE("oubliette","Oubliette", LocationCategory.RIFT),
+    RIFT_DJVUALLEY("dejavualley","Déjà Vu Alley", LocationCategory.RIFT),
+    RIFT_LIVINGCAVE("livingcave","Living Cave", LocationCategory.RIFT),
+    RIFT_LIVINGSTILLNESS("livingstillness","Living Stillness", LocationCategory.RIFT),
+    RIFT_PHOTONPATHWAY("photonpathway","Photon Pathway", LocationCategory.RIFT),
+    RIFT_MURDERHOUSE("murderhouse","Murder House", LocationCategory.RIFT),
+    ;
+
 
     private final String name;
     private final String displayName;

@@ -11,7 +11,7 @@ public class LocationHandler {
 
     private static Locations currentLocation = Locations.NONE;
 
-    public static void handleLocation(String locationLine, boolean isGuesting) {
+    public static void handleLocation(String locationLine, boolean isGuesting, boolean isRift) {
         String location = locationLine.replace(" ", "")
                 .toUpperCase(Locale.ENGLISH).trim()
                 .replaceAll("[^A-Za-z0-9]", "");
@@ -27,6 +27,8 @@ public class LocationHandler {
                 locations = Locations.GUESTISLAND;
             } else if (isPlot) {
                 locations = Locations.THEGARDEN;
+            } else if (isRift) {
+                locations = Locations.get("RIFT_" + location);
             } else {
                 locations = Locations.get(location);
             }
@@ -45,10 +47,11 @@ public class LocationHandler {
 
     @SubscribeEvent
     public void onSidebarLineUpdate(SidebarLineUpdateEvent event) {
-        if (event.rawLine.contains("\u23E3")) {
+        boolean isRift = event.rawLine.contains("ф");
+        if (event.rawLine.contains("⏣") || isRift) {
             String objectiveName = event.objective.getDisplayName().replaceAll("(?i)\\u00A7.", "");
             boolean isGuesting = objectiveName.toLowerCase(Locale.ENGLISH).endsWith("guest");
-            LocationHandler.handleLocation(event.formattedLine, isGuesting);
+            LocationHandler.handleLocation(event.formattedLine, isGuesting, isRift);
         }
     }
 }

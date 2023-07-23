@@ -1,26 +1,27 @@
 package com.thatgravyboat.skyblockhud.location;
 
-import static com.thatgravyboat.skyblockhud.handlers.MapHandler.Maps;
-
 import com.thatgravyboat.skyblockhud.SkyblockHud;
 import com.thatgravyboat.skyblockhud.handlers.MapHandler;
 
+import static com.thatgravyboat.skyblockhud.handlers.MapHandler.Maps;
+
 public enum LocationCategory {
     ERROR("error", 34),
-    ISLAND("island", 43),
     HUB("hub", 34, Maps.HUB),
+    ISLAND("island", 43),
+    PARK("park", 51, Maps.PARK),
+    JERRY("jerry", 59, Maps.JERRY),
     BARN("barn", 67, Maps.BARN),
     MUSHROOMDESERT("mushroomdesert", 75, Maps.MUSHROOM),
     GOLDMINE("gold_mine", 83, Maps.GOLDMINE),
     DEEPCAVERNS("deepcaverns", 91),
     SPIDERSDEN("spiders_den", 99, Maps.SPIDERS),
-    PARK("park", 51, Maps.PARK),
     CRIMSON("crimson_isle", 107, Maps.CRIMSON),
     DN("dungeonhub", 115, Maps.DN),
-    JERRY("jerry", 59, Maps.JERRY),
     THEEND("the_end", 123, Maps.THEEND),
     DWARVENMINES("dwarven_mines", 131, Maps.DWARVEN),
-    CRYSTALHOLLOWS("crystal_hollows", 139, Maps.CRYSTAL);
+    CRYSTALHOLLOWS("crystal_hollows", 139, Maps.CRYSTAL),
+    RIFT("rift", 147/*, TODO */);
 
     private final String name;
     private final int texturePos;

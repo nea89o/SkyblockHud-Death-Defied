@@ -77,6 +77,7 @@ public class SkyblockHud {
         MinecraftForge.EVENT_BUS.register(new SlayerHandler());
         MinecraftForge.EVENT_BUS.register(new DungeonHandler());
         MinecraftForge.EVENT_BUS.register(new MinesHandler());
+        MinecraftForge.EVENT_BUS.register(new RiftHandler());
         MinecraftForge.EVENT_BUS.register(new FarmingIslandHandler());
 
         MinecraftForge.EVENT_BUS.register(new TrackerHandler());
