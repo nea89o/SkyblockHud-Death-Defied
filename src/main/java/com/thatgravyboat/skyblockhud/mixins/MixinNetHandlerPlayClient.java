@@ -2,6 +2,7 @@ package com.thatgravyboat.skyblockhud.mixins;
 
 import com.thatgravyboat.skyblockhud.SkyblockHud;
 import com.thatgravyboat.skyblockhud.overlay.RPGHud;
+import com.thatgravyboat.skyblockhud.location.RiftHandler;
 import com.thatgravyboat.skyblockhud.tracker.TrackerHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
@@ -69,7 +70,8 @@ public class MixinNetHandlerPlayClient {
 
     @Inject(method = "handleUpdateHealth(Lnet/minecraft/network/play/server/S06PacketUpdateHealth;)V", at = @At(value = "TAIL"))
     public void onHealth(S06PacketUpdateHealth packetIn, CallbackInfo ci) {
-        RPGHud.updateHealth(packetIn.getHealth(), (Minecraft.getMinecraft().thePlayer.getMaxHealth()));
+        if (RiftHandler.isInRift)
+            RPGHud.updateHealth(packetIn.getHealth(), (Minecraft.getMinecraft().thePlayer.getMaxHealth()));
     }
 
 }
